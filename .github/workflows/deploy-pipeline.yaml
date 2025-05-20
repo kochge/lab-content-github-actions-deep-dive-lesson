@@ -67,10 +67,6 @@ jobs:
       - name: upload release asset
         uses: softprops/action-gh-release@v2
         with:
-          files: ./${{ github.sha }}.zip fil
+          files: ./${{ github.sha }}.zip
           tag_name: ${{ github.run_number }}
-          #name: source_code_with_libraries.zip
-          #path: ./${{ github.sha }}.zip
-
-          #upload_url: ${{ steps.create-release.outputs.upload_url }}
-          #asset_content_type: application/zip
+          name: source_code_with_libraries.zip
