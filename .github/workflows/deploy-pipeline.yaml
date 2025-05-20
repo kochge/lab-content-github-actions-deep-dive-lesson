@@ -64,9 +64,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: zipped-bundle
+      - name: rename asset
+        run: mv ./${{ github.sha }}.zip source_code_with_libraries.zip
       - name: upload release asset
         uses: softprops/action-gh-release@v2
         with:
-          files: ./${{ github.sha }}.zip
+          files: ./source_code_with_libraries.zip
           tag_name: ${{ github.run_number }}
-          name: source_code_with_libraries.zip
