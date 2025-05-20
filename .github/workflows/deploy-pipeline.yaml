@@ -54,6 +54,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
           name: Release from ${{ github.run_number }}
+          tag: ${{ github.run_number }}
           body: New release for ${{ github.sha }}. Release notes on the documentation site.
           draft: false
           prerelease: false
